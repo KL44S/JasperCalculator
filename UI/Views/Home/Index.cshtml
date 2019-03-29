@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Expression Calculator";
+}
+
+@section Header {
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+}
+
+<div class="shade">
+    <div class="blackboard">
+        <h1>Welcome to Expression Calculator</h1>
+        <h2>To start write an expression and press enter to evaluate it</h2>
+        <span class="error-message hidden" id="errorMessage"></span>
+        <textarea autofocus id="expression"></textarea>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        String evaluateUrl = Url.Action("EvaluateAndGetResult");
+    }
+
+    <script>
+        var evaluateUrl = '@evaluateUrl';
+    </script>
+}
